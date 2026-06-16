@@ -13,6 +13,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Nav reads on dark hero */
+    .nav {
+      background: linear-gradient(to bottom, rgba(10, 15, 6, 0.85) 0%, transparent 100%);
+    }
+    .nav__logo { color: #F8F4ED; }
+    .nav__logo:hover { opacity: 0.65; }
+    .nav__links a { color: rgba(248, 244, 237, 0.6); }
+    .nav__links a:hover { color: #F8F4ED; }
+  </style>
 </head>
 <body>
 
@@ -35,24 +45,24 @@
         <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" fill="none">
           <!-- Outer dashed ring (rotates slowly) -->
           <g class="disk-ring-outer">
-            <circle cx="150" cy="150" r="140" stroke="#C49A2F" stroke-width="0.75" stroke-dasharray="5 7" opacity="0.5"/>
+            <circle cx="150" cy="150" r="140" stroke="#E8C05A" stroke-width="1.2" stroke-dasharray="5 7" opacity="0.65"/>
           </g>
           <!-- Mid ring -->
-          <circle cx="150" cy="150" r="118" stroke="#B8870B" stroke-width="0.5" opacity="0.25"/>
+          <circle cx="150" cy="150" r="118" stroke="#D4A832" stroke-width="0.75" opacity="0.35"/>
           <!-- Inner dashed ring (rotates opposite) -->
           <g class="disk-ring-inner">
-            <circle cx="150" cy="150" r="96" stroke="#627358" stroke-width="0.75" stroke-dasharray="3 9" opacity="0.4"/>
+            <circle cx="150" cy="150" r="96" stroke="#8FA880" stroke-width="1" stroke-dasharray="3 9" opacity="0.55"/>
           </g>
           <!-- Core -->
-          <circle cx="150" cy="150" r="60" stroke="#C49A2F" stroke-width="0.5" opacity="0.2"/>
+          <circle cx="150" cy="150" r="60" stroke="#E8C05A" stroke-width="0.75" opacity="0.25"/>
           <!-- Center mark -->
-          <circle cx="150" cy="150" r="6" fill="#C49A2F" opacity="0.3"/>
-          <circle cx="150" cy="150" r="2" fill="#B8870B" opacity="0.7"/>
+          <circle cx="150" cy="150" r="6" fill="#E8C05A" opacity="0.4"/>
+          <circle cx="150" cy="150" r="2" fill="#F0D070" opacity="0.9"/>
           <!-- Cardinal marks -->
-          <line x1="150" y1="30" x2="150" y2="44" stroke="#C49A2F" stroke-width="1" opacity="0.3"/>
-          <line x1="150" y1="256" x2="150" y2="270" stroke="#C49A2F" stroke-width="1" opacity="0.3"/>
-          <line x1="30" y1="150" x2="44" y2="150" stroke="#C49A2F" stroke-width="1" opacity="0.3"/>
-          <line x1="256" y1="150" x2="270" y2="150" stroke="#C49A2F" stroke-width="1" opacity="0.3"/>
+          <line x1="150" y1="30" x2="150" y2="44" stroke="#E8C05A" stroke-width="1.5" opacity="0.4"/>
+          <line x1="150" y1="256" x2="150" y2="270" stroke="#E8C05A" stroke-width="1.5" opacity="0.4"/>
+          <line x1="30" y1="150" x2="44" y2="150" stroke="#E8C05A" stroke-width="1.5" opacity="0.4"/>
+          <line x1="256" y1="150" x2="270" y2="150" stroke="#E8C05A" stroke-width="1.5" opacity="0.4"/>
         </svg>
       </div>
 
