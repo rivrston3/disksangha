@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Library — alcente</title>
+  <meta name="description" content="A commons of practices for joyful, authentic, whole-hearted relating. Games, songs, rituals, conversations — at every scale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav__logo">alcente</a>
+    <ul class="nav__links">
+      <li><a href="library.html" class="active">Library</a></li>
+      <li><a href="covenant.html">The Vow</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Intro -->
+    <header class="library-intro">
+      <p class="section__label">The Commons</p>
+      <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 8vw, 5rem); font-weight: 300; font-style: italic; margin-bottom: 1.25rem;">
+        the library
+      </h1>
+      <p style="font-family: var(--font-serif); font-size: 1.15rem; font-style: italic; color: var(--ink-mid); max-width: 500px; margin: 0 auto 1rem; line-height: 1.7;">
+        A living commons of practices for joyful, authentic, whole-hearted relating —
+        collected and tended by the circle, open to everyone.
+      </p>
+      <p style="font-size: 0.8rem; color: var(--ink-light); letter-spacing: 0.08em;">
+        <span id="count"></span> practices · searchable by scale + type
+      </p>
+    </header>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" id="filter-bar">
+      <div class="filter-group">
+        <span class="filter-group__label">Scale</span>
+        <button class="chip active" data-filter-scale="all">All</button>
+        <button class="chip" data-filter-scale="dyad">Dyad</button>
+        <button class="chip" data-filter-scale="pod">Pod</button>
+        <button class="chip" data-filter-scale="circle">Circle</button>
+        <button class="chip" data-filter-scale="gathering">Gathering</button>
+        <button class="chip" data-filter-scale="community">Community</button>
+      </div>
+      <div class="filter-group">
+        <span class="filter-group__label">Type</span>
+        <button class="chip active" data-filter-type="all">All</button>
+        <button class="chip" data-filter-type="game">Game</button>
+        <button class="chip" data-filter-type="conversation">Conversation</button>
+        <button class="chip" data-filter-type="ritual">Ritual</button>
+        <button class="chip" data-filter-type="embodied">Embodied</button>
+        <button class="chip" data-filter-type="song">Song</button>
+      </div>
+    </div>
+
+    <!-- Practice Grid -->
+    <section class="practices">
+      <div id="practice-grid" class="practices__grid"></div>
+      <p id="no-results" class="no-results">
+        Nothing here yet for that combination —<br>
+        <a href="contribute.html" style="color: var(--gold); text-decoration: underline; text-underline-offset: 3px;">add a practice?</a>
+      </p>
+    </section>
+
+    <!-- Contribute CTA -->
+    <section class="section" style="text-align: center; padding-top: 0; padding-bottom: 6rem; border-top: 1px solid var(--border);">
+      <div class="container">
+        <div class="divider"></div>
+        <h2 class="section__title fade-up" style="font-style: italic; font-weight: 300; margin-bottom: 0.75rem;">
+          Know something that belongs here?
+        </h2>
+        <p class="section__body fade-up" style="max-width: 460px; margin: 0 auto 2rem;">
+          This library grows through the knowledge of the circle. 
+          Add a game, a song, a ritual, a conversation practice — anything that creates real connection.
+        </p>
+        <a href="contribute.html" class="btn btn--ghost fade-up">Add a Practice</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__logo">alcente</div>
+    <span class="footer__tagline">a century of peers</span>
+    <ul class="footer__links">
+      <li><a href="library.html">Library</a></li>
+      <li><a href="covenant.html">The Vow</a></li>
+      <li><a href="contribute.html">Contribute</a></li>
+    </ul>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Update count display
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('count').textContent = PRACTICES.length;
+    });
+  </script>
+
+</body>
+</html>

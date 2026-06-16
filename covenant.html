@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Vow — alcente</title>
+  <meta name="description" content="A hundred years of friendship. The covenant carried by the disk.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Page-specific overrides */
+    .vow__text {
+      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    }
+    .who-joins {
+      padding: 5rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .who-joins__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 620px;
+      margin: 2.5rem auto 0;
+    }
+    .who-joins__card {
+      padding: 1.75rem;
+      border: 1px solid var(--border);
+    }
+    .who-joins__title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+    .who-joins__desc {
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+      line-height: 1.65;
+    }
+    @media (max-width: 560px) {
+      .who-joins__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav__logo">alcente</a>
+    <ul class="nav__links">
+      <li><a href="library.html">Library</a></li>
+      <li><a href="covenant.html" class="active">The Vow</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <p class="section__label">The Circle</p>
+      <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 8vw, 5rem); font-weight: 300; font-style: italic; margin-bottom: 1.25rem;">
+        the vow
+      </h1>
+      <p style="font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; color: var(--ink-mid); max-width: 420px; margin: 0 auto;">
+        a covenant carried by the disk — from hand to hand, stranger to friend, year to year.
+      </p>
+    </section>
+
+    <!-- The Vow -->
+    <section class="vow">
+      <div class="container" style="text-align: center;">
+        <div class="divider"></div>
+
+        <p class="vow__text" id="vow-text">
+          <span class="vow__line">I catch. I pass. I show up.</span>
+          <span class="vow__line">I practice friendship as if it matters.</span>
+          <span class="vow__line">I share what I know.</span>
+          <span class="vow__line">I learn from what I don't.</span>
+          <span class="vow__line">I take joy seriously.</span>
+          <span class="vow__line">I don't take myself too seriously.</span>
+          <span class="vow__line">I stay in it for a hundred years.</span>
+        </p>
+
+        <div class="vow__signature">alcente · a century of peers</div>
+        <div class="divider"></div>
+      </div>
+    </section>
+
+    <!-- What the circle means -->
+    <section class="circle-means">
+      <div class="container">
+        <p class="section__label" style="text-align:center;">What the circle means, practically</p>
+        <ul class="circle-means__items" style="margin-top: 2rem;">
+          <li class="circle-means__item fade-up">
+            <span class="circle-means__num">i.</span>
+            <span class="circle-means__desc">
+              <strong style="font-weight: 500; color: var(--ink);">A monthly dispatch.</strong>
+              Stories, practices, and invitations from inside the circle — what people are doing,
+              learning, making, playing with. Something worth reading.
+            </span>
+          </li>
+          <li class="circle-means__item fade-up">
+            <span class="circle-means__num">ii.</span>
+            <span class="circle-means__desc">
+              <strong style="font-weight: 500; color: var(--ink);">Access to add to the library.</strong>
+              Circle members can submit practices, games, songs, stories, and rituals
+              to the commons. Your knowledge belongs here.
+            </span>
+          </li>
+          <li class="circle-means__item fade-up">
+            <span class="circle-means__num">iii.</span>
+            <span class="circle-means__desc">
+              <strong style="font-weight: 500; color: var(--ink);">Seasonal invitations.</strong>
+              Gatherings, calls, convergences. Occasional experiments.
+              The circle meets when there's something worth meeting for.
+            </span>
+          </li>
+          <li class="circle-means__item fade-up">
+            <span class="circle-means__num">iv.</span>
+            <span class="circle-means__desc">
+              <strong style="font-weight: 500; color: var(--ink);">The long game.</strong>
+              This is not a platform. There is no algorithm. 
+              It is a small, slow, intentional circle — for people who mean it.
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Who is this for -->
+    <section class="who-joins">
+      <div class="container" style="text-align: center;">
+        <p class="section__label">Who is this for</p>
+        <h2 class="section__title" style="font-style: italic; font-weight: 300;">
+          The circle is tight.<br>The library is open.
+        </h2>
+        <p class="section__body" style="max-width: 500px; margin: 0 auto;">
+          Taking the vow is for people who are genuinely called to it —
+          who feel friendship as a practice, not just an outcome.
+          The library is for everyone.
+        </p>
+        <div class="who-joins__grid">
+          <div class="who-joins__card">
+            <p class="who-joins__title">The Circle</p>
+            <p class="who-joins__desc">
+              For those who take the vow. A living commitment
+              to friendship as a spiritual path. Monthly dispatches.
+              Real relationships. The long game.
+            </p>
+          </div>
+          <div class="who-joins__card">
+            <p class="who-joins__title">The Library</p>
+            <p class="who-joins__desc">
+              Open to anyone who caught the disk, followed the link,
+              or found their way here. Browse freely. Use what you find.
+            </p>
+            <p style="margin-top: 0.75rem;"><a href="library.html" style="font-family: var(--font-serif); font-style: italic; font-size: 0.9rem; color: var(--gold); text-decoration: underline; text-underline-offset: 3px;">Enter the library →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Form -->
+    <section class="join" id="join">
+      <div class="container" style="text-align: center;">
+        <p class="section__label">Take the Vow</p>
+        <h2 class="section__title" style="font-style: italic; font-weight: 300; margin-bottom: 0.75rem;">
+          Enter the circle
+        </h2>
+        <p style="font-family: var(--font-serif); font-size: 1rem; font-style: italic; color: var(--ink-mid); margin-bottom: 3rem;">
+          Leave your name and email. We'll do the rest.
+        </p>
+
+        <!-- Success message (hidden by default) -->
+        <div class="form__success" id="form-success">
+          <div style="margin-bottom: 1.5rem;">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto 1rem;">
+              <circle cx="24" cy="24" r="23" stroke="#B8870B" stroke-width="1"/>
+              <circle cx="24" cy="24" r="15" stroke="#B8870B" stroke-width="0.5" opacity="0.4"/>
+              <circle cx="24" cy="24" r="3" fill="#B8870B" opacity="0.5"/>
+            </svg>
+          </div>
+          <p class="form__success-title">Welcome to the circle.</p>
+          <p style="font-family: var(--font-serif); font-size: 1.1rem; font-style: italic; color: var(--ink-mid); line-height: 1.7; max-width: 380px; margin: 0 auto 1.5rem;">
+            You'll receive a welcome dispatch soon. In the meantime — 
+            the library is open, and the disk keeps moving.
+          </p>
+          <a href="library.html" class="btn btn--ghost" style="margin-top: 0.5rem;">Enter the Library</a>
+        </div>
+
+        <!-- The Form -->
+        <!-- 
+          SETUP: Replace the form action URL with your Formspree endpoint.
+          1. Go to formspree.io → New Form
+          2. Copy your endpoint (looks like https://formspree.io/f/xxxxxxxx)
+          3. Replace "YOUR_FORMSPREE_ENDPOINT" below
+        -->
+        <form
+          class="form"
+          id="vow-form"
+          action="https://formspree.io/f/mnjywywq"
+          method="POST"
+        >
+          <!-- Hidden field for form identification -->
+          <input type="hidden" name="_subject" value="New circle member — alcente">
+          <input type="hidden" name="_next" value="">
+
+          <div class="form__field">
+            <label class="form__label" for="name">Your name</label>
+            <input
+              class="form__input"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="first name or full name"
+              required
+              autocomplete="given-name"
+            >
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="email">Email</label>
+            <input
+              class="form__input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="where to reach you"
+              required
+              autocomplete="email"
+            >
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="where">Where in the world are you?</label>
+            <input
+              class="form__input"
+              type="text"
+              id="where"
+              name="where"
+              placeholder="city, region, or bioregion"
+              autocomplete="off"
+            >
+          </div>
+
+          <div class="form__field" style="margin-top: 0.5rem;">
+            <label class="form__checkbox">
+              <input type="checkbox" name="vow_taken" id="vow" required>
+              <span class="form__checkbox-text">
+                I catch. I pass. I show up. I practice friendship as if it matters.
+                I stay in it for a hundred years.
+              </span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn--primary" style="margin-top: 0.75rem; width: 100%;">
+            Enter the Circle
+          </button>
+
+          <p class="form__note">
+            No spam. No algorithms. Monthly dispatches and occasional invitations, 
+            from real people in the circle. Unsubscribe anytime.
+          </p>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__logo">alcente</div>
+    <span class="footer__tagline">a century of peers</span>
+    <ul class="footer__links">
+      <li><a href="library.html">Library</a></li>
+      <li><a href="covenant.html">The Vow</a></li>
+      <li><a href="contribute.html">Contribute</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    // Animate vow lines on load
+    const vowLines = document.querySelectorAll('.vow__line');
+    vowLines.forEach((line, i) => {
+      setTimeout(() => line.classList.add('visible'), 300 + i * 180);
+    });
+
+    // Scroll fade-ups
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Form AJAX submission
+    const form = document.getElementById('vow-form');
+    const success = document.getElementById('form-success');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const action = form.getAttribute('action');
+
+      if (action === 'https://formspree.io/f/mnjywywq') {
+        // Dev mode: just show success
+        form.style.display = 'none';
+        success.classList.add('show');
+        return;
+      }
+
+      try {
+        const res = await fetch(action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          success.classList.add('show');
+        } else {
+          alert('Something went wrong. Please try again or email us directly.');
+        }
+      } catch {
+        alert('Could not submit. Check your connection and try again.');
+      }
+    });
+  </script>
+
+</body>
+</html>
