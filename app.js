@@ -11,8 +11,8 @@ const CIRCLES = [
   {
     id: 1,
     name: "The Disk Sangha",
-    invitation: "For those who caught the frisbee at Vibecamp 2026 — and felt something. A circle of people practicing friendship as a spiritual path, distributed across the world, gathering in the space between festivals and the flow of ordinary life.",
-    focus: "friendship · practice · play",
+    invitation: "For those who caught the frisbee at Vibecamp 2026. A circle of people practicing friendship as a spiritual path, solving coordination, and cultivating the conditions for flourishing.",
+    focus: "friendship · sense-making · play",
     coordinator: "River Stone",
     location: "Distributed",
     founded: "June 2026"
