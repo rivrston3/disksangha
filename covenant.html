@@ -52,6 +52,7 @@
     <a href="/" class="nav__logo">alcente</a>
     <ul class="nav__links">
       <li><a href="library.html">Library</a></li>
+      <li><a href="circles.html">Circles</a></li>
       <li><a href="covenant.html" class="active">The Vow</a></li>
     </ul>
   </nav>
@@ -245,6 +246,23 @@
             >
           </div>
 
+          <div class="form__field">
+            <label class="form__label" for="circle-select">Joining a specific circle? (optional)</label>
+            <p id="circle-prefill-note" style="display:none; font-size:0.8rem; color:var(--gold); margin-bottom:0.5rem; letter-spacing:0.05em;"></p>
+            <select
+              class="form__select"
+              id="circle-select"
+              name="circle"
+              data-circles-dropdown
+            >
+              <option value="" disabled selected>Select a circle, or leave blank</option>
+            </select>
+            <p style="font-size:0.78rem; color:var(--ink-light); margin-top:0.4rem; line-height:1.5;">
+              Don't see what you're looking for?
+              <a href="start-circle.html" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Name a new circle →</a>
+            </p>
+          </div>
+
           <div class="form__field" style="margin-top: 0.5rem;">
             <label class="form__checkbox">
               <input type="checkbox" name="vow_taken" id="vow" required>
@@ -280,6 +298,7 @@
     </ul>
   </footer>
 
+  <script src="app.js"></script>
   <script>
     // Animate vow lines on load
     const vowLines = document.querySelectorAll('.vow__line');

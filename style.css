@@ -856,6 +856,90 @@ p { font-size: 1rem; color: var(--ink-mid); }
   gap: 1rem;
 }
 
+/* --- Circles --- */
+.circles-grid {
+  display: grid;
+  gap: 1.5rem;
+  max-width: var(--max-wide);
+  margin: 2.5rem auto 0;
+}
+
+.circle-card {
+  border: 1px solid var(--border);
+  padding: 2rem 2rem 1.5rem 2.25rem;
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: var(--cream);
+}
+
+.circle-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--gold), var(--sage));
+}
+
+.circle-card:hover {
+  border-color: var(--border-mid);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.circle-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.circle-card__name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.circle-card__desc {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--ink-mid);
+  line-height: 1.75;
+}
+
+.circle-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0.25rem;
+}
+
+.circle-card__meta {
+  font-size: 0.78rem;
+  color: var(--ink-light);
+  letter-spacing: 0.03em;
+}
+
+/* Circles intro page */
+.circles-intro {
+  padding: 9rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.circles-section {
+  padding: 2.5rem 1.5rem 6rem;
+}
+
 /* --- Footer --- */
 .footer {
   padding: 3rem 1.5rem;

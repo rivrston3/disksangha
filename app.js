@@ -1,7 +1,100 @@
 // ============================================
 // ALCENTE — Library App
 // Practice data + filtering + card expansion
+// Circles data + rendering
 // ============================================
+
+// ============================================
+// CIRCLES — Named guilds within the century
+// ============================================
+const CIRCLES = [
+  {
+    id: 1,
+    name: "The Disk Sangha",
+    invitation: "For those who caught the frisbee at Vibecamp 2026 — and felt something. A circle of people practicing friendship as a spiritual path, distributed across the world, gathering in the space between festivals and the flow of ordinary life.",
+    focus: "friendship · practice · play",
+    coordinator: "River Stone",
+    location: "Distributed",
+    founded: "June 2026"
+  }
+];
+
+function renderCircles(containerId) {
+  const grid = document.getElementById(containerId || 'circles-grid');
+  if (!grid) return;
+
+  if (CIRCLES.length === 0) {
+    grid.innerHTML = '<p class="no-results show" style="display:block;">No circles yet — be the first to name one.</p>';
+    return;
+  }
+
+  CIRCLES.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'circle-card fade-up';
+    card.innerHTML = `
+      <div class="circle-card__header">
+        <div>
+          <h3 class="circle-card__name">${c.name}</h3>
+          <div class="circle-card__badges" style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;">
+            ${c.focus ? `<span class="badge badge--type">${c.focus}</span>` : ''}
+            ${c.location ? `<span class="badge badge--scale">${c.location}</span>` : ''}
+          </div>
+        </div>
+      </div>
+      <p class="circle-card__desc">${c.invitation}</p>
+      <div class="circle-card__footer">
+        <span class="circle-card__meta">coordinated by <em>${c.coordinator}</em> · founded ${c.founded}</span>
+        <a href="covenant.html?circle=${encodeURIComponent(c.name)}" class="btn btn--ghost" style="padding:0.6rem 1.4rem;font-size:0.72rem;">Join this circle</a>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function populateCircleDropdowns() {
+  document.querySelectorAll('[data-circles-dropdown]').forEach(select => {
+    const placeholder = select.querySelector('option[disabled][value=""]');
+    select.innerHTML = '';
+    if (placeholder) select.appendChild(placeholder.cloneNode(true));
+
+    CIRCLES.forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = c.name;
+      opt.textContent = c.name;
+      select.appendChild(opt);
+    });
+
+    const sep = document.createElement('option');
+    sep.disabled = true;
+    sep.textContent = '──────────';
+    select.appendChild(sep);
+
+    const newOpt = document.createElement('option');
+    newOpt.value = 'new';
+    newOpt.textContent = 'I want to name a new circle →';
+    select.appendChild(newOpt);
+  });
+
+  document.querySelectorAll('[data-circles-dropdown]').forEach(select => {
+    select.addEventListener('change', () => {
+      if (select.value === 'new') window.location.href = 'start-circle.html';
+    });
+  });
+}
+
+function prefillCircleFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const circleName = params.get('circle');
+  if (!circleName) return;
+  const decoded = decodeURIComponent(circleName);
+  document.querySelectorAll('[data-circles-dropdown]').forEach(select => {
+    [...select.options].forEach(opt => { if (opt.value === decoded) opt.selected = true; });
+  });
+  // Surface a note
+  const note = document.getElementById('circle-prefill-note');
+  if (note) { note.textContent = `Joining: ${decoded}`; note.style.display = 'block'; }
+}
+
 
 const PRACTICES = [
   {
@@ -356,7 +449,24 @@ function initScrollAnimations() {
 // Boot
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-  initFilters();
-  renderPractices();
+  // Library page
+  if (document.getElementById('practice-grid')) {
+    initFilters();
+    renderPractices();
+  }
+  // Circles page
+  if (document.getElementById('circles-grid')) {
+    renderCircles('circles-grid');
+  }
+  // Library circles section
+  if (document.getElementById('library-circles-grid')) {
+    renderCircles('library-circles-grid');
+  }
+  // Any page with circle dropdowns
+  if (document.querySelector('[data-circles-dropdown]')) {
+    populateCircleDropdowns();
+    prefillCircleFromURL();
+  }
+  // Scroll animations (all pages)
   initScrollAnimations();
 });

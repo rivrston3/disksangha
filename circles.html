@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circles — alcente</title>
+  <meta name="description" content="Named guilds within the century of peers. Each a focused circle of friends practicing something specific together.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav__logo">alcente</a>
+    <ul class="nav__links">
+      <li><a href="library.html">Library</a></li>
+      <li><a href="circles.html" class="active">Circles</a></li>
+      <li><a href="covenant.html">The Vow</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Intro -->
+    <header class="circles-intro">
+      <p class="section__label">The Guilds</p>
+      <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 8vw, 5rem); font-weight: 300; font-style: italic; margin-bottom: 1.25rem;">
+        the circles
+      </h1>
+      <p style="font-family: var(--font-serif); font-size: 1.15rem; font-style: italic; color: var(--ink-mid); max-width: 520px; margin: 0 auto 1.5rem; line-height: 1.75;">
+        Within the century of peers, smaller circles form around shared focus, geography, or calling.
+        Each is named by its founder, coordinated from within, and open to anyone who feels the pull.
+      </p>
+      <p style="font-size: 0.8rem; color: var(--ink-light); letter-spacing: 0.08em;" id="circle-count"></p>
+    </header>
+
+    <!-- Circles Grid -->
+    <section class="circles-section">
+      <div class="container container--wide">
+        <div class="circles-grid" id="circles-grid"></div>
+      </div>
+    </section>
+
+    <!-- What is a circle -->
+    <section class="section" style="background: var(--cream-mid); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+
+          <div class="fade-up">
+            <p class="section__label">What is a circle?</p>
+            <h2 class="section__title" style="font-style: italic; font-weight: 300; font-size: clamp(1.5rem, 3vw, 2rem);">
+              A named container<br>for a specific kind<br>of friendship.
+            </h2>
+            <div class="divider divider--left"></div>
+            <p class="section__body">
+              A circle is smaller than the century of peers and more specific.
+              It has a name, an invitation, and a coordinator — the person who called it into being.
+              What it does with itself after that is up to the people inside it.
+            </p>
+          </div>
+
+          <ul class="about__values fade-up">
+            <li class="about__value">
+              <p class="about__value-title">Anyone can name one</p>
+              <p class="about__value-desc">
+                If you have a guild you want to sustain or invite — name it.
+                Submit a circle, and it enters the directory.
+              </p>
+            </li>
+            <li class="about__value">
+              <p class="about__value-title">Coordination is yours</p>
+              <p class="about__value-desc">
+                The person who names the circle holds it.
+                Run it however serves the people inside — email thread, Signal group, seasonal call, annual gathering.
+              </p>
+            </li>
+            <li class="about__value">
+              <p class="about__value-title">Part of something larger</p>
+              <p class="about__value-desc">
+                Every circle member is also part of the century of peers —
+                the overarching dispatch and the shared library of practices.
+              </p>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA — name a circle -->
+    <section class="section" style="text-align: center; padding-bottom: 7rem;">
+      <div class="container">
+        <div class="divider"></div>
+        <h2 class="section__title fade-up" style="font-style: italic; font-weight: 300; margin-bottom: 0.75rem;">
+          Is there a circle<br>you want to call into being?
+        </h2>
+        <p class="section__body fade-up" style="max-width: 460px; margin: 0 auto 2.5rem;">
+          Name it. Describe who it's for. We'll add it to the directory
+          and you'll become its coordinator — free to run it however you see fit.
+        </p>
+        <a href="start-circle.html" class="btn btn--primary fade-up">Name a Circle</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__logo">alcente</div>
+    <span class="footer__tagline">a century of peers</span>
+    <ul class="footer__links">
+      <li><a href="library.html">Library</a></li>
+      <li><a href="circles.html">Circles</a></li>
+      <li><a href="covenant.html">The Vow</a></li>
+      <li><a href="contribute.html">Contribute</a></li>
+    </ul>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const count = document.getElementById('circle-count');
+      if (count) count.textContent = `${CIRCLES.length} circle${CIRCLES.length !== 1 ? 's' : ''} and counting`;
+
+      // Animate cards after render
+      setTimeout(() => {
+        document.querySelectorAll('.circle-card.fade-up').forEach((el, i) => {
+          setTimeout(() => el.classList.add('visible'), i * 120);
+        });
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>
